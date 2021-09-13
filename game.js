@@ -750,7 +750,7 @@ function initUpgrades()
 
 function load()
 {
-	const loadedSave = localStorage.getItem(LocalStorageKey)
+	let loadedSave = localStorage.getItem(LocalStorageKey)
 	if (loadedSave === null)
 	{
 		state = {
@@ -761,7 +761,21 @@ function load()
 	}
 	else
 	{
-		state = JSON.parse(atob(loadedSave))
+		try
+		{
+			state = JSON.parse(atob(loadedSave))
+		}
+		catch (e)
+		{
+			alert("Your save is corrupted or invalid. It is going to be reset.")
+			loadedSave = null
+			localStorage.removeItem(LocalStorageKey)
+			state = {
+				money: 0,
+				upgrades: [ UpgradeID.STO_FLOPPY, UpgradeID.CON_MODEM ],
+				stats: {}
+			}
+		}
 	}
 	initStats()
 	initUpgrades()
@@ -791,8 +805,15 @@ function importSave()
 	const value = prompt("Enter your save string here. This will overwrite your current save!\nProceed with caution.")
 	if (value !== null)
 	{
-		localStorage.setItem(LocalStorageKey, atob(value))
-		location.reload()
+		try
+		{
+			localStorage.setItem(LocalStorageKey, atob(value))
+			location.reload()
+		}
+		catch(e)
+		{
+			alert("The save you provided could not be decoded. Are you sure it is valid?")
+		}
 	}
 }
 

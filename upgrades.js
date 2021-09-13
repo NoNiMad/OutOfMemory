@@ -114,7 +114,7 @@ const Upgrades =
 				id: UpgradeID.COMP_TXT,
 				name: "Text",
 				desc: "Compress text files by 30% while downloading",
-				cost: 5000,
+				cost: 2000,
 				type: UpgradeType.COMPRESSION,
 				value: 0.7
 			},
@@ -122,7 +122,7 @@ const Upgrades =
 				id: UpgradeID.COMP_PIC,
 				name: "Picture",
 				desc: "Compress pictures by 20% while downloading",
-				cost: 5000,
+				cost: 8000,
 				type: UpgradeType.COMPRESSION,
 				value: 0.8
 			},
@@ -130,7 +130,7 @@ const Upgrades =
 				id: UpgradeID.COMP_VID,
 				name: "Video",
 				desc: "Compress videos by 10% while downloading",
-				cost: 5000,
+				cost: 16000,
 				type: UpgradeType.COMPRESSION,
 				value: 0.9
 			}
@@ -151,7 +151,7 @@ const Upgrades =
 				id: UpgradeID.ANA_SORT_SIZE,
 				name: "Sort by size",
 				desc: "Sort files by size",
-				cost: 1000,
+				cost: 2000,
 				type: UpgradeType.ANALYSIS
 			},
 			{

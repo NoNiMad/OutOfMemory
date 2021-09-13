@@ -705,7 +705,7 @@ const Upgrades =
 				name: "ADSL",
 				cost: 2000,
 				type: UpgradeType.CONNECTION,
-				value: fileSize(3, SizeUnit.MO)
+				value: fileSize(1, SizeUnit.MO)
 			},
 			{
 				id: UpgradeID.CON_VDSL,
@@ -739,7 +739,7 @@ const Upgrades =
 				id: UpgradeID.COMP_TXT,
 				name: "Text",
 				desc: "Compress text files by 30% while downloading",
-				cost: 5000,
+				cost: 2000,
 				type: UpgradeType.COMPRESSION,
 				value: 0.7
 			},
@@ -747,7 +747,7 @@ const Upgrades =
 				id: UpgradeID.COMP_PIC,
 				name: "Picture",
 				desc: "Compress pictures by 20% while downloading",
-				cost: 5000,
+				cost: 8000,
 				type: UpgradeType.COMPRESSION,
 				value: 0.8
 			},
@@ -755,7 +755,7 @@ const Upgrades =
 				id: UpgradeID.COMP_VID,
 				name: "Video",
 				desc: "Compress videos by 10% while downloading",
-				cost: 5000,
+				cost: 16000,
 				type: UpgradeType.COMPRESSION,
 				value: 0.9
 			}
@@ -776,7 +776,7 @@ const Upgrades =
 				id: UpgradeID.ANA_SORT_SIZE,
 				name: "Sort by size",
 				desc: "Sort files by size",
-				cost: 1000,
+				cost: 2000,
 				type: UpgradeType.ANALYSIS
 			},
 			{
@@ -1241,7 +1241,7 @@ function updateMission(timestamp)
 			}
 			else
 			{
-				const decrypSecondPerGo = hasUpgrade(UpgradeID.SCR_HACK_RAINBOW) ? fileSize(50, SizeUnit.GO) : fileSize(2, SizeUnit.KO)
+				const decrypSecondPerGo = hasUpgrade(UpgradeID.SCR_HACK_RAINBOW) ? fileSize(50, SizeUnit.GO) : fileSize(1, SizeUnit.KO)
 				const sizeDecrypted = (timestamp - currentMission.dl.start) / 1000 * decrypSecondPerGo
 				const percentage = sizeDecrypted / currentMission.dl.node.size * 100
 
@@ -1596,7 +1596,7 @@ function initUpgrades()
 
 function load()
 {
-	const loadedSave = localStorage.getItem(LocalStorageKey)
+	let loadedSave = localStorage.getItem(LocalStorageKey)
 	if (loadedSave === null)
 	{
 		state = {
@@ -1607,7 +1607,21 @@ function load()
 	}
 	else
 	{
-		state = JSON.parse(atob(loadedSave))
+		try
+		{
+			state = JSON.parse(atob(loadedSave))
+		}
+		catch (e)
+		{
+			alert("Your save is corrupted or invalid. It is going to be reset.")
+			loadedSave = null
+			localStorage.removeItem(LocalStorageKey)
+			state = {
+				money: 0,
+				upgrades: [ UpgradeID.STO_FLOPPY, UpgradeID.CON_MODEM ],
+				stats: {}
+			}
+		}
 	}
 	initStats()
 	initUpgrades()
@@ -1637,8 +1651,15 @@ function importSave()
 	const value = prompt("Enter your save string here. This will overwrite your current save!\nProceed with caution.")
 	if (value !== null)
 	{
-		localStorage.setItem(LocalStorageKey, atob(value))
-		location.reload()
+		try
+		{
+			localStorage.setItem(LocalStorageKey, atob(value))
+			location.reload()
+		}
+		catch(e)
+		{
+			alert("The save you provided could not be decoded. Are you sure it is valid?")
+		}
 	}
 }
 
