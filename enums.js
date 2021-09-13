@@ -1,0 +1,59 @@
+const SizeUnit =
+{
+	O: 0,
+	KO: 1,
+	MO: 2,
+	GO: 3,
+	TO: 4,
+	PO: 5,
+	EO: 6,
+	ZO: 7,
+	YO: 8
+}
+
+const FileType =
+{
+	TEXT: 0,
+	PICTURE: 1,
+	VIDEO: 2,
+	FOLDER: 3,
+	PROTECTED: 4
+}
+
+const UpgradeType =
+{
+	STORAGE: 0,
+	CONNECTION: 1,
+	COMPRESSION: 2,
+	ANALYSIS: 3,
+	SCRIPTS: 4
+}
+
+const UpgradeID =
+{
+	STO_FLOPPY: 0,
+	STO_SD: 1,
+	STO_CD: 2,
+	STO_DVD: 3,
+	STO_USB: 4,
+	STO_HDD: 5,
+	STO_SSD: 6,
+	STO_NAS: 7,
+	CON_MODEM: 8,
+	CON_ADSL: 9,
+	CON_VDSL: 10,
+	CON_FIBER: 11,
+	CON_QUANTIC: 12,
+	COMP_TXT: 13,
+	COMP_PIC: 14,
+	COMP_VID: 15,
+	ANA_FOLDER_SIZE: 16,
+	ANA_SORT_SIZE: 17,
+	ANA_VAL_HINT: 18,
+	ANA_VAL_ORDER: 19,
+	ANA_VAL_EXACT: 20,
+	ANA_VAL_FOLDER: 21,
+	SCR_HACK_BRUTE: 22,
+	SCR_HACK_RAINBOW: 23
+}
+

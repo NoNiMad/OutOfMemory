@@ -1,0 +1,31 @@
+{
+	"SizeUnit": [ "O", "KO", "MO", "GO", "TO", "PO", "EO", "ZO", "YO" ],
+	"FileType": [ "TEXT", "PICTURE", "VIDEO", "FOLDER", "PROTECTED" ],
+	"UpgradeType": [ "STORAGE", "CONNECTION", "COMPRESSION", "ANALYSIS", "SCRIPTS" ],
+	"UpgradeID": [
+		"STO_FLOPPY",
+		"STO_SD",
+		"STO_CD",
+		"STO_DVD",
+		"STO_USB",
+		"STO_HDD",
+		"STO_SSD",
+		"STO_NAS",
+		"CON_MODEM",
+		"CON_ADSL",
+		"CON_VDSL",
+		"CON_FIBER",
+		"CON_QUANTIC",
+		"COMP_TXT",
+		"COMP_PIC",
+		"COMP_VID",
+		"ANA_FOLDER_SIZE",
+		"ANA_SORT_SIZE",
+		"ANA_VAL_HINT",
+		"ANA_VAL_ORDER",
+		"ANA_VAL_EXACT",
+		"ANA_VAL_FOLDER",
+		"SCR_HACK_BRUTE",
+		"SCR_HACK_RAINBOW"
+	]
+}
