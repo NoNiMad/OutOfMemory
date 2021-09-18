@@ -1,0 +1,31 @@
+/*******************
+* THEMES
+*******************/
+.dark-green-theme
+{
+	--primary-color: #00FF41;
+	--primary-darker-color: #008F11;
+	--primary-border-color: #003B00;
+	--level-pretty-full: orange;
+	--level-almost-full: red;
+	--level-almost-full-hover: maroon;
+	--background-color: black;
+	--file-hint: gold;
+}
+
+.light-theme
+{
+	--primary-color: #304736;
+	--primary-darker-color: #112b14;
+	--primary-border-color: #0b140b;
+	--level-pretty-full: orange;
+	--level-almost-full: red;
+	--level-almost-full-hover: maroon;
+	--background-color: white;
+	--file-hint: gold;
+}
+
+
+/*******************
+* BACKGROUND ANIMATION
+*******************/

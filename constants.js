@@ -1,5 +1,12 @@
 const LocalStorageKey = "out_of_memory"
 
+const ThemeList = {
+	"dark-green-theme": "Dark green",
+	"light-theme": "Light (don't do this to yourself)"
+}
+
+const DefaultTheme = "dark-green-theme"
+
 const Panels = {
 	MENU: "menu",
 	HOME: "home",
@@ -7,7 +14,8 @@ const Panels = {
 	MISSION: "mission",
 	STATS: "stats",
 	DEBRIEF: "debrief",
-	STORY: "story"
+	STORY: "story",
+	THEME: "theme"
 }
 
 const Stats = {

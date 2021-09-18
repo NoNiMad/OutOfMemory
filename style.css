@@ -1,9 +1,4 @@
-:root
-{
-	--light-green: #00FF41;
-	--green: #008F11;
-	--dark-green: #003B00;
-}
+@import url(themes.css);
 
 html, body
 {
@@ -11,12 +6,10 @@ html, body
 	height: 100%;
 	margin: 0;
 	padding: 0;
-
 	font-family: 'Courier New', Courier, monospace;
 	font-size: 1.2em;
-	color: var(--light-green);
-	background: black;
-
+	color: var(--primary-color);
+	background: var(--background-color);
 	display: flex;
 }
 
@@ -89,7 +82,7 @@ html, body
 	position: relative;
 	margin: 0.5em;
 	padding: 1em;
-	border: 0.1em solid var(--dark-green);
+	border: 0.1em solid var(--primary-border-color);
 	border-radius: 0.5em;
 
 	flex-shrink: 0;
@@ -110,7 +103,7 @@ html, body
 
 a
 {
-	color: var(--light-green);
+	color: var(--primary-color);
 	text-decoration: none;
 }
 
@@ -130,7 +123,7 @@ hr
 {
 	width: 100%;
 	border: none;
-	border-bottom: 0.1em solid var(--dark-green);
+	border-bottom: 0.1em solid var(--primary-border-color);
 }
 
 ul
@@ -174,23 +167,23 @@ li a
 
 li a:hover
 {
-	background-color: var(--green);
+	background-color: var(--primary-darker-color);
 }
 
 li a.danger:hover
 {
-	background-color: maroon;
+	background-color: var(--level-almost-full-hover);
 }
     
 .tooltip
 {
 	visibility: hidden;
 	width: calc(70%);
-	background-color: black;
+	background-color: var(--background-color);
 	text-align: center;
 	padding: 0.2em;
 
-	border: 1px solid var(--green);
+	border: 1px solid var(--primary-darker-color);
 	border-radius: 6px;
 
 	position: absolute;
@@ -222,7 +215,7 @@ li.disabled a
 {
 	font-style: italic;
 	cursor: default;
-	color: var(--green);
+	color: var(--primary-darker-color);
 }
 
 li.disabled a:hover
@@ -233,7 +226,7 @@ li.disabled a:hover
 .file-hint
 {
 	display: inline-block;
-	color: gold;
+	color: var( --file-hint);
 	margin-top: -0.2em;
 	margin-right: 0.5em;
 }
@@ -247,8 +240,8 @@ li.disabled a:hover
 
 #mission-path
 {
-	border-top: 1px solid var(--green);
-	border-bottom: 1px solid var(--green);
+	border-top: 1px solid var(--primary-darker-color);
+	border-bottom: 1px solid var(--primary-darker-color);
 
 	padding: 0.2em 0.5em;
 	margin: 0 -1em;
@@ -278,7 +271,7 @@ a.button-link
 	display: block;
 	text-align: center;
 
-	border: 2px solid var(--green);
+	border: 2px solid var(--primary-darker-color);
 }
 
 progress
@@ -289,23 +282,23 @@ progress
 	-moz-appearance: none;
 	appearance: none;
 
-	border: 2px solid var(--green);
-	background-color: black;
+	border: 2px solid var(--primary-darker-color);
+	background-color: var(--background-color);
 }
 
 progress::-moz-progress-bar
 {
-	background-color: var(--green);
+	background-color: var(--primary-darker-color);
 }
 
 progress.warning::-moz-progress-bar
 {
-	background-color: orange;
+	background-color: var(--level-pretty-full);
 }
 
 progress.full::-moz-progress-bar
 {
-	background-color: red;
+	background-color: var(--level-almost-full);
 }
 
 #dl-popup
@@ -313,13 +306,13 @@ progress.full::-moz-progress-bar
 	display: none;
 
 	position: absolute;
-	background-color: black;
+	background-color: var(--background-color);
 
 	top: 40%;
 	width: calc(100% - 2em);
 
 	padding: 2em;
-	border: 1px solid var(--green);
+	border: 1px solid var(--primary-darker-color);
 }
 
 #dl-progress

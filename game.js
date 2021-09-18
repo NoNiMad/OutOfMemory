@@ -882,6 +882,28 @@ function setPanel(panelId)
 
 //#endregion
 
+//#region Themes
+
+
+const themeList = id("theme-list")
+
+function onThemePanel()
+{
+	themeList.innerText = "";
+	Object.keys(ThemeList).forEach(name => {
+		const themeLi = el("li");
+		const nameContainer = el("a")
+		nameContainer.href = "#"
+		nameContainer.innerText = `${ThemeList[name]}`;
+		themeLi.onclick =  () => {setTheme(name)}
+		themeLi.append(nameContainer);
+		themeList.append(themeLi);
+	});
+}
+
+//#endregion
+
+
 ;(function() {
 	const saveFound = load()
 	setupLinks()
